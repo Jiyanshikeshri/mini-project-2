@@ -41,6 +41,7 @@ clubSchema.post("findOneAndDelete", async(club)=>{
     }
 });
 
-const Club = mongoose.model("Club", clubSchema);
+// const Club = mongoose.model("Club", clubSchema);
+const Club = mongoose.models.Club || mongoose.model("Club", clubSchema);
 
 module.exports = Club;
