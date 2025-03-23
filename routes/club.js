@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
-const Club = require("../models/Club.js");
+const Club = require("../models/club.js");
 const {isLoggedIn, isOwner, validateClub} = require("../middleware.js");
 const clubController = require("../controllers/club.js");
 const multer  = require('multer')
