@@ -1,0 +1,199 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.logo{
+    height: 4rem;
+}
+.nav-link{
+    color: #00BFFF !important;
+}
+
+/* footer styling */
+.f-info-links a{
+    text-decoration: none;
+    color: black;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links, 
+.f-info-socials,
+.f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* styling for cards */
+/* .club-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.club-link{
+    text-decoration: none;
+}
+
+.club-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* card effect */
+/* .card-img-overlay{
+   opacity: 0; 
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+*/
+/* card css effect */
+.club-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Enhance card appearance */
+.club-card {
+    border: none !important;
+    margin-bottom: 2rem;
+    border-radius: 1.5rem; /* Smooth rounded corners */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    background: white;
+}
+
+/* Hover Effect */
+.club-card:hover {
+    transform: translateY(-8px); /* Lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    height: 220px;
+    object-fit: cover !important;
+    transition: transform 0.3s ease;
+}
+
+/* Image Hover Zoom */
+.club-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Card Body */
+.card-body {
+    padding: 1rem !important;
+    text-align: center;
+}
+
+/* Club Title */
+.card-body p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Link Styling */
+.club-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Subtle Overlay Effect on Hover */
+.card-img-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+}
+
+.card-img-overlay:hover {
+    opacity: 1;
+}
+
+.add-btn{
+    background-color: #00BFFF !important;
+    border: none !important;
+} 
+
+/* show page */
+.show-img{
+    height: 50vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* home page */
+.medicaps {
+    width: 100%;  /* Makes the image scale to fit the screen */
+    max-width: 100%;  /* Ensures it never overflows */
+    height: auto;  /* Maintains aspect ratio */
+    display: block;  /* Removes unwanted spacing below images */
+}
+
+@media (max-width: 768px) { 
+    .medicaps {
+        width: 100%;  /* Full width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+

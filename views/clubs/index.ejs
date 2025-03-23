@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h1>All clubs</h1>
+    <!-- <form method="GET" action="/club/new">
+        <button>Create new club</button>
+    </form> -->
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+        <% for(let club of allClubs){ %>
+            <a href="/club/<%= club._id %>" class="club-link">
+                <div class="card col club-card">
+                <img src="<%= club.image.url %>" class="card-img-top" alt="club_image" style="height: 15rem;" >
+                <div class="card-img-overlay"></div>  <!-- <!card k upar kuch bhi idkhana ho toh -->
+                <div class="card-body">
+                <p class="text-center"><b><%= club.title %></b></p>
+            </div>
+            </div></a>
+        <% } %>
+    </div>
+
+    <!-- <ul>
+        <% for(let club of allClubs){ %>
+        <li> <a href="/club/<%= club._id %>"> <%= club.title %> </a> </li>
+        <% } %>
+    </ul> -->
+</body>

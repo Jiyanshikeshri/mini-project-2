@@ -1,0 +1,92 @@
+<% layout("/layouts/boilerplate") %>
+<% if (!club) { %>
+    <h3 class="text-center">Club not found!</h3>
+<% } else { %>  
+<div class="row mt-3">
+    <div class="col-8 offset-3">
+        <h3><%= club.title %></h3>
+    </div>
+    <div class="card col-6 offset-3 show-card club-card">
+        <img src="<%= club.image.url %>" class="card-img-top show-img" alt="card_image">
+        <div class="card-body">
+            <p class="card-text">Owned by <i><%= club.owner.username %></i></p>
+                <p class="card-text"><%= club.description %></p>
+                <p class="card-text"><%= club.location %></p>
+                <p class="card-text"><%= club.head %></p>
+        </div>
+    </div>
+<% } %>
+    <!-- <ul>
+        <li><%= club.title %></li>
+        <li><%= club.description %></li>
+        <li><%= club.location %></li>
+        <li><%= club.head %></li>
+    </ul> -->
+    <br>
+
+    <% if(currUser && club.owner._id.equals(currUser._id)) { %>
+    <div class="btns">
+        <a href="/club/<%= club._id %>/edit" class="btn btn-dark col-1 offset-3 add-btn">Edit</a>
+
+        <form method="POST" action="/club/<%= club._id %>?_method=DELETE">
+            <button class="btn btn-dark offset-5 add-btn">Delete</button>
+        </form>
+    </div>
+    <% } %>
+
+    <div class="col-8 offset-3 mb-3">
+        <hr>
+        <% if(currUser) { %>
+        <h4>Register for an upcoming Event!</h4>
+        <form action="/club/<%= club._id %>/register" method="POST" novalidate class="needs-validation">
+            <input type="hidden" id="eventId">
+            <div class="mb-3 mt-3">
+                <label class="form-label">Name:</label>
+                <input type="text" id="name" name="register[name]" class="form-control" required>
+                <div class="invalid-feedback">Please add your name.</div>
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label">Email:</label>
+                <input type="email" id="email" name="register[email]" class="form-control" required>
+                <div class="invalid-feedback">Please add your E-mail id.</div>
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label">Phone:</label>
+                <input type="text" id="phone" name="register[phone]" class="form-control" required>
+                <div class="invalid-feedback">Please add your phone number.</div>
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label" for="event-select">Choose an event:</label>
+                    <select class="form-control" name="register[event]" id="event-select">
+                    <option value="">--Please choose an event--</option>
+                    <option value="anchoring">Anchoring</option>
+                    <option value="melange">Melange</option>
+                    <option value="symphony">Symphony</option>
+                    <option value="groove">Groove</option>
+                    </select>
+            </div>
+            <button class="btn btn-outline-dark" type="submit">Submit</button>
+        </form>
+        <hr>
+        <% } %>
+
+        <p><b>All Registrations</b></p>
+        <div class="row">
+        <% for(register of club.register) { %>
+            <div class="card col-5 ms-3 mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">@<%= register.author.username %></h5>
+                  <p class="card-text"><%= register.name %></p> 
+                  <p class="card-text"><%= register.email %> : <%= register.event %></p> 
+                  <!-- <p class="card-text"><%= register.event %></p>  -->
+                </div>
+                <form class="mb-3" method="POST" action="/club/<%= club._id %>/register/<%= register._id %>?_method=DELETE">
+                    <button class="btn btn-sm add-btn">Delete</button>
+                </form>
+            </div>
+        <% } %>
+        </div>
+
+    </div>
+</div>
+    
