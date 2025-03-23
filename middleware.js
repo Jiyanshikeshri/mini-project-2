@@ -1,4 +1,4 @@
-const Club = require("./models/Club.js");
+const Club = require("./models/club.js");
 const Register = require("./models/register.js");
 const ExpressError = require("./utils/ExpressError.js");
 const {clubSchema, registerSchema} = require("./schema.js");
