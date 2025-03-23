@@ -1,4 +1,4 @@
-const Club = require("../models/Club");
+const Club = require("../models/club");
 
 module.exports.index = async(req,res)=>{
     const allClubs = await Club.find({});

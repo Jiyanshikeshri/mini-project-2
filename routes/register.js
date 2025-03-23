@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router({mergeParams: true});
 const wrapAsync = require("../utils/wrapAsync.js");
 const ExpressError = require("../utils/ExpressError.js");
-const Club = require("../models/Club.js");
+const Club = require("../models/club.js");
 const Register = require ("../models/register.js");
 const {validateRegister, isLoggedIn, isRegisterAuthor} = require("../middleware.js");
 

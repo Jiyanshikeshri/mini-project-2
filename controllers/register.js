@@ -1,4 +1,4 @@
-const Club = require("../models/Club.js");
+const Club = require("../models/club.js");
 const Register = require("../models/register.js");
 
 module.exports.createRegister = async(req,res)=>{

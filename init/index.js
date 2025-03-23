@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const initData = require("./data.js");
-const Club = require("../models/Club.js");
+const Club = require("../models/club.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/CollegeClubHub";
 
